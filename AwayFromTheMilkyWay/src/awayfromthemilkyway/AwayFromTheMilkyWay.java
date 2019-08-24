@@ -12,16 +12,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
-/**
- *
- * @author giorg
- */
+import awayfromthemilkyway.view.menuGui;
+import javafx.scene.layout.Pane;
+ 
+        
+        
 public class AwayFromTheMilkyWay extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        Button btn = new Button();
+       /* Button btn = new Button();
         btn.setText("Say 'Hello World'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
             
@@ -29,14 +29,15 @@ public class AwayFromTheMilkyWay extends Application {
             public void handle(ActionEvent event) {
                 System.out.println("Hello World!");
             }
-        });
+        });*/
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
+        menuGui menu = new menuGui();
+        Pane root = menuGui.disegnaGui();
+        //root.getChildren().add(btn);
         
-        Scene scene = new Scene(root, 300, 250);
+        Scene scene = new Scene(root, 1280, 720);
         
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Away From The Milky Way");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
