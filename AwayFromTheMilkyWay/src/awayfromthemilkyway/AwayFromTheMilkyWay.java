@@ -9,6 +9,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import awayfromthemilkyway.view.menuGui;
+import java.io.FileNotFoundException;
 import javafx.scene.layout.Pane;
  
         
@@ -16,7 +17,7 @@ import javafx.scene.layout.Pane;
 public class AwayFromTheMilkyWay extends Application {
     
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws FileNotFoundException {
        /* Button btn = new Button();
         btn.setText("Say 'Hello World'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
