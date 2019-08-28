@@ -15,6 +15,7 @@ package awayfromthemilkyway.view;
 
 
 import java.io.FileNotFoundException;
+import javafx.animation.PauseTransition;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -36,6 +37,7 @@ import static javafx.scene.paint.Color.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 
 
@@ -45,7 +47,7 @@ public class menuGui  {
         //empty constructor
     }//end constructor
     
-    public static Pane disegnaGui() throws FileNotFoundException{
+    public static Pane disegnaMenuGui() throws FileNotFoundException{
         
         
         BorderPane menu = new BorderPane();      
@@ -76,7 +78,11 @@ public class menuGui  {
         btn1.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
             btn1.setEffect(shadow);
         });
-       
+        btn1.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent e) -> {
+            //TO-DO
+        });
+            
+        
       
         Button btn2 = new Button("carica partita");
         btn2.setPrefSize(300,100);

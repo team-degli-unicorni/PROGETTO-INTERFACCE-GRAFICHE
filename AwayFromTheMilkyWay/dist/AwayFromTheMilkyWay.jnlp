@@ -8,8 +8,8 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="AwayFromTheMilkyWay.jar" size="806006" download="eager" />
+    <jar href="AwayFromTheMilkyWay.jar" size="15316" download="eager" />
   </resources>
-  <jfx:javafx-desc  width="800" height="600" main-class="awayfromthemilkyway.AwayFromTheMilkyWay"  name="AwayFromTheMilkyWay" />
+  <jfx:javafx-desc  width="800" height="600" main-class="awayfromthemilkyway.controller.AwayFromTheMilkyWay"  name="AwayFromTheMilkyWay" />
   <update check="always"/>
 </jnlp>
