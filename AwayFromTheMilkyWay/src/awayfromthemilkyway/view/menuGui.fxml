@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="menuGui" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="Background" stylesheets="@menuGuiBackground.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="awayfromthemilkyway.view.MenuGuiController">
+   <children>
+      <Label alignment="CENTER" layoutY="14.0" prefHeight="162.0" prefWidth="1280.0" text="AWAY FROM MILKY WAY - JAVA EDITION" textFill="#161515" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font name="MS Gothic" size="48.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER" layoutX="90.0" layoutY="206.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="420.0" text="Nuova Partita" AnchorPane.bottomAnchor="450.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0">
+         <font>
+            <Font name="MS Gothic" size="18.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="84.0" layoutY="382.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="420.0" text="Carica Partita" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0">
+         <font>
+            <Font name="MS Gothic" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="opzioniPartita" alignment="CENTER" layoutX="90.0" layoutY="541.0" mnemonicParsing="false" onAction="#opzioniPartitaButtonClicked" prefHeight="60.0" prefWidth="420.0" text="Opzioni" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0">
+         <font>
+            <Font name="MS Gothic" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
