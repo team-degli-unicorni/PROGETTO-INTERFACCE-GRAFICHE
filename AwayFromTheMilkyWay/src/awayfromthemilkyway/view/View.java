@@ -81,7 +81,7 @@ public class View implements IView{
         this.prepareSceneToShowWindow("instructionsGui.fxml", "Istruzioni - Away From The Milky Way", MENU_WINDOW_WIDTH, MENU_WINDOW_HEIGHT);
     }//end override method openInstructionsWindow()
     
-     private void closeGameWindow()
+    private void closeGameWindow()
     {
         if(this.gameWindow!=null)
         {
