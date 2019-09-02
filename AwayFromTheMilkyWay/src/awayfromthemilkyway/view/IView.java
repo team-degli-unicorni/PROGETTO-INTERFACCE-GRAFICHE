@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 package awayfromthemilkyway.view;
-
+//prova
 /**
  *
  * @author giorg
  */
 public interface IView {
     //Methods in order to change different game screens
-    public void openMenuWindow(/*uello che dovrò passare lo determinerò dopo*/);
-    public void openGameWindow();
+    public void openMenuWindow();
+    public void openGameWindow(/*uello che dovrò passare lo determinerò dopo*/);
     public void openInstructionsWindow();
     public void openOptionsWindow();
    
