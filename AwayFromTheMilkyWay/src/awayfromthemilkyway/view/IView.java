@@ -11,9 +11,11 @@ package awayfromthemilkyway.view;
  */
 public interface IView {
     //Methods in order to change different game screens
-    public void openMenuWindow();
+    public void openMenuWindow(/*uello che dovrò passare lo determinerò dopo*/);
     public void openGameWindow();
-    
+    public void openInstructionsWindow();
+    public void openOptionsWindow();
+   
     
     
     

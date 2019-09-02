@@ -41,9 +41,9 @@ import javafx.util.Duration;
 
 
 
-public class menuGui  {
+public class MenuGui  {
     
-    public menuGui(){
+    public MenuGui(){
         //empty constructor
     }//end constructor
     

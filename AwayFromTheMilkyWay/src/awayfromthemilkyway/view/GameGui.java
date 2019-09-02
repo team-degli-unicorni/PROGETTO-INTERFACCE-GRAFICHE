@@ -11,6 +11,7 @@ import javafx.stage.Stage;
  *
  * @author giorg
  */
-public class GameWindow extends Stage {
+public class GameGui extends Stage {
+    //TO-DO
     
 }

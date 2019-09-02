@@ -7,14 +7,23 @@ package awayfromthemilkyway.view;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
- *
- * @author giorg
- */
+ **/
+ 
 public class MenuGuiController implements Initializable {
+    
+    @FXML private Button nuovaPartita;
+    @FXML private Button caricaPartita;
+    @FXML private Button opzioniPartita;
+    
+    
+    
+    
 
     /**
      * Initializes the controller class.
@@ -24,4 +33,19 @@ public class MenuGuiController implements Initializable {
         // TODO
     }    
     
-}
+     public void nuovaPartitaButtonClicked(){
+         
+        View.getInstance().openGameWindow();
+    }//end class nuovaPartitaButtonClicked
+     
+    public void caricaPartitaButtonClicked(){
+        
+        //View.getInstance().openOptionsWindow();
+    
+    }//end class caricaPartitaButtonClicked
+
+    public void opzioniPartitaButtonClicked(){
+        
+        View.getInstance().openOptionsWindow();
+    }
+}//end class MenuGuiController

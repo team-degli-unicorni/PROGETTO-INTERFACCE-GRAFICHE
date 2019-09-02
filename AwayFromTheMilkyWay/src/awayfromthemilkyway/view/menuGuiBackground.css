@@ -2,3 +2,7 @@
     -fx-background-image: url("/resources/galassia.jpg");
     /*-fx-background-size: 100% 100%; whit this line you resize the image to all the background of the scene */
 }
+.Background2{
+    -fx-background-image: url("/resources/back.png");
+    -fx-background-size: 100% 100%;
+}

@@ -8,7 +8,7 @@ package awayfromthemilkyway.controller;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import awayfromthemilkyway.view.menuGui;
+import awayfromthemilkyway.view.MenuGui;
 import java.io.FileNotFoundException;
 import javafx.scene.layout.Pane;
 
