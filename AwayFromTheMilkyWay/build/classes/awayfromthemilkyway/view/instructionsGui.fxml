@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="awayfromthemilkyway.view.InstructionsGuiController">
-    
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="Background" stylesheets="@menuGuiBackground.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="awayfromthemilkyway.view.InstructionsGuiController">
+   <children>
+      <Label alignment="CENTER" layoutX="12.0" layoutY="9.0" prefHeight="162.0" prefWidth="1280.0" text="AWAY FROM MILKY WAY - ISTRUZIONI" textFill="#191818" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font name="MS Gothic" size="48.0" />
+         </font>
+      </Label>
+      <Button fx:id="backToOptions" layoutX="101.0" layoutY="69.0" mnemonicParsing="false" onAction="#backToOptionsButtonClicked" prefHeight="34.0" prefWidth="42.0" styleClass="Background2" stylesheets="@menuGuiBackground.css" />
+   </children>
 </AnchorPane>

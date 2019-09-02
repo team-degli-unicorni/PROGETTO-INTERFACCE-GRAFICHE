@@ -7,21 +7,25 @@ package awayfromthemilkyway.view;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
-/**
- * FXML Controller class
- *
- * @author giorg
- */
+
+    
+
+
 public class InstructionsGuiController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML private Button backToOptions;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }  
+    
+    public void backToOptionsButtonClicked(){
+        View.getInstance().openOptionsWindow();
+    }
     
 }
