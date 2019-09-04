@@ -7,7 +7,7 @@
 
 <AnchorPane fx:id="menuGui" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="Background" stylesheets="@menuGuiBackground.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="awayfromthemilkyway.view.MenuGuiController">
    <children>
-      <Label alignment="CENTER" layoutY="14.0" prefHeight="162.0" prefWidth="1280.0" text="AWAY FROM MILKY WAY - JAVA EDITION" textFill="#161515" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Label alignment="CENTER" layoutY="14.0" prefHeight="162.0" prefWidth="1280.0" text="AWAY FROM MILKY WAY - JAVA EDITION" textFill="#f8f8f8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <font>
             <Font name="MS Gothic" size="48.0" />
          </font>
