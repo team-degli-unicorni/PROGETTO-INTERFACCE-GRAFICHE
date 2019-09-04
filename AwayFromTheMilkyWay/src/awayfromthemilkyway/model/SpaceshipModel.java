@@ -24,9 +24,9 @@ public class SpaceshipModel extends Circle {
         
     }//end constructor
     
-    //setCenterX
+    //getCenterX
     
-    //setCenterY
+    //getCenterY
     
     public int deadCollision(){
         
