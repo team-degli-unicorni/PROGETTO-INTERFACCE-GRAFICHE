@@ -11,7 +11,7 @@ import javafx.scene.shape.Circle;
  *
  * @author Stefania
  */
-public class MilkyWayModel extends Circle {
+public class MilkyWayModel extends Circle{
     
      private boolean win;
     
