@@ -11,11 +11,11 @@ import javafx.scene.shape.Circle;
  *
  * @author Stefania
  */
-public class ObstacleCollisionModel extends Circle{
+public class MilkyWayModel extends Circle {
     
-    private boolean collision;
-  
-    public ObstacleCollisionModel(double centerX, double centerY, double radius){
+     private boolean win;
+    
+     public MilkyWayModel(double centerX, double centerY, double radius){
         
         super(centerX, centerY, radius);
         
@@ -25,9 +25,8 @@ public class ObstacleCollisionModel extends Circle{
     
     //getCenterY
     
-    public boolean getCollision(){
-        return collision;
+     public boolean getCenter(){
+        return win;
     
-    }//end method getCollision
-    
+    }//end method getCenter
 }

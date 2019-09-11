@@ -11,7 +11,7 @@ import javafx.scene.shape.Circle;
  *
  * @author Stefania
  */
-public class SpaceshipModel extends Circle {
+public class SpaceshipModel extends Circle{
     
     private int spaceshipLife;
     private boolean collision;
