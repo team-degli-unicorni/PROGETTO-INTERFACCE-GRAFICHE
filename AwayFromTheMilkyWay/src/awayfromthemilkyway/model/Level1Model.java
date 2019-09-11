@@ -9,7 +9,7 @@ package awayfromthemilkyway.model;
  *
  * @author Stefania
  */
-public class Level1Model{
+public class Level1Model {
     
     SpaceshipModel spaceship = new SpaceshipModel(60.0, 400.0, 35.0, 1);
     

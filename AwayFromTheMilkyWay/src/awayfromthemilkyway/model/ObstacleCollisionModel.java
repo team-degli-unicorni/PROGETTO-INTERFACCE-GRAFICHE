@@ -11,7 +11,7 @@ import javafx.scene.shape.Circle;
  *
  * @author Stefania
  */
-public class ObstacleCollisionModel extends Circle{
+public class ObstacleCollisionModel extends Circle {
     
     private boolean collision;
   
