@@ -28,28 +28,28 @@ public class Configuration {
         try {
             buffRead = new BufferedReader(
                 new InputStreamReader(
-                    this.getClass().getResourceAsStream("/resources/config/level1.txt"),"ISO-8859-1"));
+                    this.getClass().getResourceAsStream("/resources/configuration/Level1.txt"),"ISO-8859-1"));
             
             this.properties = new Properties();
             this.properties.load(buffRead);
         }
         catch(FileNotFoundException fnfe) {//penso che qui questi catch degli errori non servono perchè assegnamo noi il file che deve essere letto(level 1),quindi siamo sicuri che cisia
-            /*
-            JOptionPane.showMessageDialog(null,
+            
+           /* JOptionPane.showMessageDialog(null,
                         "Configuration file not found, the program will be closed.",
                         "Serious ERROR",
                         JOptionPane.ERROR_MESSAGE);
-            System.exit(-1);
-*/
+            System.exit(-1);*/
+
         }
         catch(IOException ioe) {
-            /*
-            JOptionPane.showMessageDialog(null,
+            
+           /* JOptionPane.showMessageDialog(null,
                         "Unable to read the configuration file, the program will be closed.",
                         "Serious ERROR",
                         JOptionPane.ERROR_MESSAGE);
-            System.exit(-1);
-*/
+            System.exit(-1);*/
+
         }
         finally {
             try {
@@ -107,37 +107,62 @@ public class Configuration {
         
         if (fileName.contains("//"))
             fileName = fileName.substring("file:/".length()); //Windows version - in pratica attraverso questo metodo prendo una substring che parte da dopo file:/, in quanto il metodo substring vuole come parametro un int, e il . lenght restituisce un int pari alla lunghezza della  stringa su cui è invocato
-        //else if (fileName.contains("/"))
-           // fileName = fileName.substring("file:/".length()); //Linux version
+        else if (fileName.contains("/"))
+            fileName = fileName.substring("file:/".length()); //Linux version
         fileName = fileName.replaceAll("%20", " ");// replaceAll sostituisce la scrittura 20% con uno spazio vuoto,debo ancora capire a che seerve
         return fileName;
     }//end getCongfigurationFileFullPath
 
-     
+    //INSTANCE
     public double getStartPositionSpaceshipX(){
-        return Double.parseDouble(this.properties.getProperty("getStartPositionSpaceshipX"));//parse double serve a trasformare la stringa che otteniamo dentro le parentsei in un double
+        return Double.parseDouble(this.properties.getProperty("StartPositionSpaceshipX"));//parse double serve a trasformare la stringa che otteniamo dentro le parentsei in un double
     }//end method getStartPositionSpaceshipX
     
     
     public double getStartPositionSpaceshipY(){
-        return Double.parseDouble(this.properties.getProperty("getStartPositionSpaceshipY"));
+        return Double.parseDouble(this.properties.getProperty("StartPositionSpaceshipY"));
     }//end method getStartPositionSpaceshipY
     
     
-     public double getStarshipRadius(){
-        return Double.parseDouble(this.properties.getProperty("getStarshipRadius"));
+    public double getSpaceshipRadius(){
+        return Double.parseDouble(this.properties.getProperty("SpaceshipRadius"));
     }//end method getStarshipRadius
     
      
-     /* public double getStartPositionSpaceshipX(){
-        return Double.parseDouble(this.properties.getProperty("getStartPositionSpaceshipX"));
-    }//end method getStartPositionSpaceshipX
+    public double getEarthPositionX(){
+        return Double.parseDouble(this.properties.getProperty("EarthPositionX"));
+    }//end method getEarthPositionX
     
       
-       public double getStartPositionSpaceshipX(){
-        return Double.parseDouble(this.properties.getProperty("getStartPositionSpaceshipX"));
-    }//end method getStartPositionSpaceshipX*/
+    public double getEarthPositionY(){
+        return Double.parseDouble(this.properties.getProperty("EarthPositionY"));
+    }//end method getEarthPositionY
     
-     
+       
+    public double getEarthRadius(){
+        return Double.parseDouble(this.properties.getProperty("EarthRadius"));
+    }//end method getEarthRadius
     
+    
+    public double getExitMilkyWayPositionX(){
+        return Double.parseDouble(this.properties.getProperty("ExitMilkyWayPositionX"));
+    }//end method getEarthPositionX
+    
+    
+    public double getExitMilkyWayPositionY(){
+        return Double.parseDouble(this.properties.getProperty("ExitMilkyWayPositionY"));
+    }//end method getEarthPositionX
+    
+    
+    public double getExitMilkyWayRadius(){
+        return Double.parseDouble(this.properties.getProperty("ExitMilkyWayRadius"));
+    }//end method getEarthPositionX
+       
+       
+    //STATIC 
+     public static Configuration getInstance() {
+        if (configuration == null)
+            configuration = new Configuration();
+        return configuration;
+    }
 }//end class

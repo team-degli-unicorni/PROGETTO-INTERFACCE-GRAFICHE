@@ -1,0 +1,13 @@
+#value of stuffs about setting universe class;
+#player
+SpaceshipRadius = 30
+StartPositionSpaceshipX = 100
+StartPositionSpaceshipY = 400 
+#obstacles
+EarthRadius = 60
+EarthPositionX = 600
+EarthPositionY = 100
+ExitMilkyWayPositionX = 500
+ExitMilkyWayPositionY = 200
+ExitMilkyWayRadius = 30
+

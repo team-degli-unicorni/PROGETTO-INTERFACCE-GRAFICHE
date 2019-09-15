@@ -36,6 +36,7 @@ public class MenuGuiController implements Initializable {
      public void nuovaPartitaButtonClicked(){
          
         View.getInstance().openGameWindow();
+        //View.getInstance().prova();
     }//end class nuovaPartitaButtonClicked
      
     public void caricaPartitaButtonClicked(){
