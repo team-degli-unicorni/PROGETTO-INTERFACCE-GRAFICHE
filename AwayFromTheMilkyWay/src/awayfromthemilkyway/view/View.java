@@ -16,6 +16,10 @@ import javafx.stage.Stage;
 
 
 import awayfromthemilkyway.utils.Resources;
+import java.util.Optional;
+import java.util.concurrent.atomic.AtomicBoolean;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 
 
 
@@ -32,6 +36,7 @@ public class View implements IView{
     private static View instance = null;    
     private GameGui gameWindow = null;
     private Stage shownWindow; 
+   
     
     
     //method for the transition between game windows-----------------------------------------------------------------------------------------------------------------------------
@@ -42,7 +47,7 @@ public class View implements IView{
         try
         {
             root = FXMLLoader.load(getClass().getResource(xmlSrc));
-            //shownWindow.getIcons().add(Resources.GeneralImages.ICON.getImage());//general images è un metodo che sta nella classe Resources che ancora devo implementare e in questo caso serve a caricare l'icona iniziale del gioco
+            shownWindow.getIcons().add(Resources.otherImages.icon.getImage());//general images è un metodo che sta nella classe Resources che ancora devo implementare e in questo caso serve a caricare l'icona iniziale del gioco
             shownWindow.setScene(new Scene(root,windowWidth,windowHeight));
             shownWindow.setTitle(title);
             shownWindow.show();
@@ -56,15 +61,16 @@ public class View implements IView{
     public void openGameWindow(){
         closeGameWindow();
         this.gameWindow = new GameGui();
-        //gameWindow.getIcons().add(Resources.GeneralImages.ICON.getImage()); ancora non implementato resources
-        //this.gameWindow.getBattlefield().initBattlefield(playerBase,enemyBase);metodo inutile nel nostro caso, però possiamo prendeer spunto per un parallelismo
+        gameWindow.getIcons().add(Resources.otherImages.icon.getImage());
+        this.gameWindow.getUniverse().setGalaxyConfiguration();//serve a settare la galassia con i èpianeti all'inizio//PROBLEMA IN QUESTO METODO
         //Resources.Music.SOUNDTRACK.play(); questa riga serve a mettere la musica,la implementeremo qundo implementeremo resources
         gameWindow.show();
         shownWindow.setScene(null);
         shownWindow.hide();
         
+        
     }//end override method openGameWindow
-
+   
     @Override
     public void openMenuWindow() {
         prepareSceneToShowWindow("menuGui.fxml", "Away From The Milky Way", MENU_WINDOW_WIDTH, MENU_WINDOW_HEIGHT);
@@ -93,9 +99,112 @@ public class View implements IView{
      
      
      
-     //other methods---------------------------------------------------------------------------------------------------------------------------------------
+     //show dialogue methods--------------------------------------------------------------------------------------------------------------------------------------
 
-     private View(){
+
+    @Override
+    public void showInformationDialog(String message, String title){
+    
+
+            Alert dialogWindow = new Alert(Alert.AlertType.INFORMATION);
+            ((Stage) dialogWindow.getDialogPane().getScene().getWindow()).getIcons()
+                .add(Resources.otherImages.icon.getImage());
+            dialogWindow.setTitle(title);
+            dialogWindow.setContentText(message);
+            dialogWindow.showAndWait();
+
+    }
+
+    @Override
+    public boolean showConfirmationDialog(String message,String title, String firstOption, String secondOption){
+    
+        AtomicBoolean userChoose = new AtomicBoolean();
+        Alert dialogWindow = new Alert(Alert.AlertType.INFORMATION);
+        dialogWindow.setTitle(title);
+        dialogWindow.setHeaderText(null);
+        dialogWindow.setContentText(message);
+        ((Stage) dialogWindow.getDialogPane().getScene().getWindow()).getIcons()
+                .add(Resources.otherImages.icon.getImage());
+        
+        ButtonType opt1 = new ButtonType(firstOption);
+        ButtonType opt2 = new ButtonType(secondOption);
+       
+        dialogWindow.getButtonTypes().setAll(opt1,opt2);
+       
+        Optional<ButtonType> result = dialogWindow.showAndWait();
+        userChoose.set(result.get() == opt1);
+
+        dialogWindow.close();
+        return userChoose.get();
+    }
+    @Override
+    public void showErrorDialog(String message){
+    
+        Alert error = new Alert(Alert.AlertType.ERROR);
+        error.setTitle("Si Ã¨ verificato un errore...");
+        error.setHeaderText("Si Ã¨ verificato l'errore:");
+        error.setContentText(message); 
+        error.show();
+    }
+
+    //methods to move the spaceship
+    @Override
+    public void updateSpaceshipPositionX(double translation){
+        this.gameWindow.getUniverse().getSpaceship().setTranslateX(translation);
+    }//end method updateSpaceshipCenterPositionX
+    
+    
+    @Override
+    public void updateSpaceshipPositionY(double translation){
+        this.gameWindow.getUniverse().getSpaceship().setTranslateY(translation);
+    }//end method updateSpaceshipCenterPositionY
+    
+    
+    @Override
+    public void updateSpaceshipCenter(double xCenter,double yCenter){
+        this.gameWindow.getUniverse().getSpaceship().setCenterX(xCenter);
+        this.gameWindow.getUniverse().getSpaceship().setCenterX(yCenter);
+    }//end method updateBulletCenter
+    
+    
+    @Override
+    public double getSpaceshippositionX(){
+        return (this.gameWindow.getUniverse().getSpaceship().getTranslateX()+this.gameWindow.getUniverse().getSpaceship().getCenterX());
+    }
+    
+    @Override
+    public double getSpaceshippositionY(){
+        return (this.gameWindow.getUniverse().getSpaceship().getTranslateY()+this.gameWindow.getUniverse().getSpaceship().getCenterY());
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // methods to update the player's data
+    
+    public void updatePlayerBuonces(int bouncesNumber){
+        //TO-DO AFTER THE IMPLEMENTATION OF THE DATA PLAYER
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    private View(){
+        
          shownWindow = new Stage();
      }//end constructor View
      
@@ -105,11 +214,6 @@ public class View implements IView{
             instance = new View();
 	return instance;  
     }//end method getInstance
-
-
-
-
-
 
 
 

@@ -12,7 +12,7 @@
             <Font name="MS Gothic" size="48.0" />
          </font>
       </Label>
-      <Button alignment="CENTER" layoutX="90.0" layoutY="206.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="420.0" text="Nuova Partita" AnchorPane.bottomAnchor="450.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0">
+      <Button fx:id="nuovaPartita" alignment="CENTER" layoutX="90.0" layoutY="206.0" mnemonicParsing="false" onAction="#nuovaPartitaButtonClicked" prefHeight="60.0" prefWidth="420.0" text="Nuova Partita" AnchorPane.bottomAnchor="450.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0">
          <font>
             <Font name="MS Gothic" size="18.0" />
          </font>
