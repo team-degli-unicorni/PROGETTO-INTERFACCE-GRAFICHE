@@ -185,6 +185,15 @@ public class View implements IView{
     
     
     
+    // methods to update the player's data
+    
+    public void updatePlayerBuonces(int bouncesNumber){
+        //TO-DO AFTER THE IMPLEMENTATION OF THE DATA PLAYER
+    }
+    
+    
+    
+    
     
     
     
