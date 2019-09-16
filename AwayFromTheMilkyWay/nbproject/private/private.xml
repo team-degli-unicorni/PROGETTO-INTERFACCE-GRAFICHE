@@ -12,6 +12,17 @@
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/view/MenuGuiController.java</file>
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/view/View.java</file>
 
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/Level2Model.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/Level3Model.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/controller/AwayFromTheMilkyWay.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/MilkyWayModel.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/ObstacleEnemyModel.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/Level1Model.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/Level4Model.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/SpaceshipModel.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/Level5Model.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/ObstacleCollisionModel.java</file>
+            
         </group>
     </open-files>
 </project-private>
