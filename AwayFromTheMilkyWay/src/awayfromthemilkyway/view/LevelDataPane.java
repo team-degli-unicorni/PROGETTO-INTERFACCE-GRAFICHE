@@ -77,7 +77,7 @@ public class LevelDataPane extends GridPane {
         });
     
         
-        
+       
         
     }//end constructor of the class
     
