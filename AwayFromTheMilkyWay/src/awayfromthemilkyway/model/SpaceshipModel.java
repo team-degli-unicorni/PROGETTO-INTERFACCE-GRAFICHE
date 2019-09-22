@@ -15,6 +15,7 @@ public class SpaceshipModel extends Circle {
     
     private int spaceshipLife;
     private boolean collision;
+    private int nBounces = 0;
     private double speed;
     
     public SpaceshipModel(double centerX, double centerY, double radius, int spaceshipLife){
@@ -28,15 +29,36 @@ public class SpaceshipModel extends Circle {
     
     //getCenterY
 
-    
-    public int deadCollision(){
+    public int deadEnemyCollision(){
         
-        if(!collision)
+        if(collision)
              spaceshipLife = 0;
         
         return spaceshipLife; 
     
-    }//end method deadCollision
+    }//end method deadEnemyCollision
+    
+     public boolean getCollision(){
+        return collision;
+    
+    }//end method getCollision
+     
+    public int counterCollision(){
+        if(this.getCollision())
+            nBounces = nBounces + 1;
+        
+        return nBounces;
+        
+    }//end method counterCollision
+    
+    public int deadBounces(int desiredBounces){ 
+        
+        if(nBounces<desiredBounces)
+             spaceshipLife = 0;
+        
+        return spaceshipLife; 
+    
+    }//end method deadBounces
     
     public int deadSpeed(){
         
