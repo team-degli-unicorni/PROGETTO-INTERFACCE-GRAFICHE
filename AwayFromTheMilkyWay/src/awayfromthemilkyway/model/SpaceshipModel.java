@@ -13,8 +13,6 @@ import javafx.scene.shape.Circle;
  */
 public class SpaceshipModel extends Circle {
     
-    //scritta nuova1
-    
     private int spaceshipLife;
     private boolean collision;
     private double speed;
