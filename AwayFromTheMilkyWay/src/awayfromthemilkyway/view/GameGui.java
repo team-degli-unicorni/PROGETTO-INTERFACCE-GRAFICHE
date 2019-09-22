@@ -7,22 +7,32 @@ package awayfromthemilkyway.view;
 
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 
 public class GameGui extends Stage {
     
-    
+    private LevelDataPane levelPane;
+   
     private Universe universe = null;
-    private AnchorPane layout;
+    private BorderPane layout;
     
     
     public GameGui(){
         super();
         universe = new Universe();
+        levelPane = new LevelDataPane();
+        levelPane.setPrefSize(1200,200);
+        levelPane.setMinSize(1200, 50);
         
-        layout = new AnchorPane();
-        layout.getChildren().add(universe);
+        
+        layout = new BorderPane();
+        layout.setCenter(universe);
+        layout.setBottom(levelPane);
+        layout.setLeft(null);
+        layout.setRight(null);
+        layout.setTop(null);
         
         
         Scene gameScene = new Scene(layout,1280,720);
