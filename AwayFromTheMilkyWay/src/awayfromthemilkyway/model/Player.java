@@ -11,19 +11,26 @@ package awayfromthemilkyway.model;
  */
 public class Player {
     
+    private int playerId;
     private String playerName;
     private int playerBouncesNumber;
     private int desiredBounces;
     private int levelNumber;
     private double launchPower;
 
-    public Player(String playerName, int playerBouncesNumber, int desiredBounces, int levelNumber, double launchPower){
+    public Player(int playerId, String playerName, int playerBouncesNumber, int desiredBounces, int levelNumber, double launchPower){
         
+        this.playerId = playerId;
         this.playerName = playerName;
         this.playerBouncesNumber = playerBouncesNumber;
         this.desiredBounces = desiredBounces;
         this.levelNumber = levelNumber;
         this.launchPower = launchPower;
+    }
+    
+    public int getPlayerId(){
+        
+        return this.playerId;
     }
     
     public String getPlayerName(){
@@ -69,5 +76,3 @@ public class Player {
     }//end method getLaunchPower 
 }
 
-    
-}

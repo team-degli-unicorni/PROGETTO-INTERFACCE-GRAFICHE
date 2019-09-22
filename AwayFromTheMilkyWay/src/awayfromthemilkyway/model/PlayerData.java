@@ -42,12 +42,13 @@ public class PlayerData {
         lstSA = new LinkedList<String[]>();
         String[] sArr = null;
         for (Player p : this.playerLst) {
-            sArr = new String[5];
-            sArr[0] = p.getPlayerName();
-            sArr[1] = String.valueOf(p.getPlayerBouncesNumber());
-            sArr[2] = String.valueOf(p.getDesiredBounces());
-            sArr[3] = String.valueOf(p.getLevelNumber());
-            sArr[4] = String.valueOf(p.getLaunchPower());
+            sArr = new String[6];
+            sArr[0] = String.valueOf(p.getPlayerId());
+            sArr[1] = p.getPlayerName();
+            sArr[2] = String.valueOf(p.getPlayerBouncesNumber());
+            sArr[3] = String.valueOf(p.getDesiredBounces());
+            sArr[4] = String.valueOf(p.getLevelNumber());
+            sArr[5] = String.valueOf(p.getLaunchPower());
             lstSA.add(sArr);
         }
 
