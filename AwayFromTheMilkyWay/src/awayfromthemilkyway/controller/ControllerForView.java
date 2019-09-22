@@ -66,7 +66,14 @@ public class ControllerForView implements IControllerForView {
                     if(!Model.getInstance().isSpaceshipOutOfScenaryLimits){//se l'astronave non è fuori dai limiti si entrerà in questo if
                        
                         if(Model.getInstance().isHurtingAPlanet){//metodo del rimbalzo se  l'astronave urta un pianeta
-                            double newAngle = Math.atan2(moveYComponent * -1,moveXComponent) - Math.PI;
+                            double newAngle = Math.atan2(moveYComponent * -1,moveXComponent) - Math.PI;// lonk per info su coord polari https://library.weschool.com/lezione/sistema-di-coordinate-polari-spirale-di-archimede-geometria-analitica-13404.html
+                            //Resources.SoundEffects.BOUNCE.play();
+                            
+                            this.stopAnimation(false); 
+                            ControllerForView.getInstance().shoot(newAngle,speed/2,
+                                    Model.getInstance().getBulletXPosition())
+                                    
+                            
                         }//end if
                     
                 
