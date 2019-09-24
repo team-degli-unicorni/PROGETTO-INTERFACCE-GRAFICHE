@@ -13,7 +13,7 @@ import javafx.scene.shape.Circle;
  */
 public class ObstacleEnemyModel extends Circle {
   
-    public ObstacleEnemyModel(double centerX, double centerY, double radius){
+    public ObstacleEnemyModel(double centerX, double centerY, double radius) {
         
         super(centerX, centerY, radius);
         

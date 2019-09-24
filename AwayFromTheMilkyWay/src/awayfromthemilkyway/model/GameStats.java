@@ -14,6 +14,7 @@ public class GameStats {
     private int gameId;
     
     public int getGameId() {
+        
         return gameId;
     }
     
@@ -30,7 +31,8 @@ public class GameStats {
     private int levelBestThree;
    
 
-    public GameStats(int gameId,int idBest, String nameBest, int levelBest, int idBestTwo, String nameBestTwo, int levelBestTwo, int idBestThree, String nameBestThree, int levelBestThree){
+    public GameStats(int gameId,int idBest, String nameBest, int levelBest, int idBestTwo, String nameBestTwo, int levelBestTwo, int idBestThree, String nameBestThree, int levelBestThree) {
+        
         this.gameId = gameId;
         this.idBest = idBest;
         this.idBestTwo = idBestTwo;
@@ -43,7 +45,8 @@ public class GameStats {
         this.levelBestThree = levelBestThree;
     }
 
-    public GameStats(int gameId, int idBest, String nameBest, int levelBest){
+    public GameStats(int gameId, int idBest, String nameBest, int levelBest) {
+        
         this.gameId = gameId;
         this.idBest = idBest;
         this.nameBest = nameBest;
@@ -57,38 +60,47 @@ public class GameStats {
     }
     
     public int getIdBest() {
+        
         return idBest;
     }
 
     public int getIdBestTwo() {
+        
         return idBestTwo;
     }
 
     public int getIdBestThree() {
+        
         return idBestThree;
     }
 
     public String getNameBest() {
+        
         return nameBest;
     }
 
     public String getNameBestTwo() {
+        
         return nameBestTwo;
     }
 
     public String getNameBestThree() {
+        
         return nameBestThree;
     }
 
     public int getLevelBest() {
+        
         return levelBest;
     }
 
     public int getLevelBestTwo() {
+        
         return levelBestTwo;
     }
 
     public int getLevelBestThree() {
+        
         return levelBestThree;
     }
 
@@ -97,48 +109,58 @@ public class GameStats {
     }
 
     public void setIdBest(int idBest) {
+        
         this.idBest = idBest;
     }
 
     public void setIdBestTwo(int idBestTwo) {
+        
         this.idBestTwo = idBestTwo;
     }
 
     public void setIdBestThree(int idBestThree) {
+        
         this.idBestThree = idBestThree;
     }
 
     public void setNameBest(String nameBest) {
+        
         this.nameBest = nameBest;
     }
 
     public void setNameBestTwo(String nameBestTwo) {
+        
         this.nameBestTwo = nameBestTwo;
     }
 
     public void setNameBestThree(String nameBestThree) {
+        
         this.nameBestThree = nameBestThree;
     }
 
     public void setLevelBest(int levelBest) {
+        
         this.levelBest = levelBest;
     }
 
     public void setLevelBestTwo(int levelBestTwo) {
+        
         this.levelBestTwo = levelBestTwo;
     }
 
     public void setLevelBestThree(int levelBestThree) {
+        
         this.levelBestThree = levelBestThree;
     }
 
     @Override
     public String toString() {
+        
         return "GameStats{" + "idBest=" + idBest + ", idBestTwo=" + idBestTwo + ", idBestThree=" + idBestThree + ", nameBest=" + nameBest + ", nameBestTwo=" + nameBestTwo + ", nameBestThree=" + nameBestThree + ", levelBest=" + levelBest + ", levelBestTwo=" + levelBestTwo + ", levelBestThree=" + levelBestThree + '}';
     }
     
-    public String[] dataAsStringArray()
-    {
+    public String[] dataAsStringArray() {
+        
         String[] gameData = new String[3];
         gameData[0]= new StringBuilder().append("Miglior Giocatore: ")
                 .append(this.nameBest)
@@ -155,8 +177,6 @@ public class GameStats {
                 .append(", Livello: ")
                 .append(this.getLevelBestThree()).toString();
         
-        return gameData;
-        
+        return gameData;   
     }
-    
 }

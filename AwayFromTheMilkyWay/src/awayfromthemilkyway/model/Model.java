@@ -26,7 +26,7 @@ public class Model implements IModel {
     private double playerBulletYStartPosition;
     private int level;
     private double bulletRadius;
-    private BulletModel bullet;
+    private SpaceshipModel spaceship;
     private PlayerData playerData;
     private GameData gameData;
     private Player player;
@@ -35,81 +35,74 @@ public class Model implements IModel {
 
     @Override
     public void updateSpaceshipCenter(double x, double y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        this.spaceship.setCenterX(x);
+        this.spaceship.setCenterY(y);
     }
 
     @Override
     public void updateXSpaceshipCoordinate(double xTranslation) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        this.spaceship.setTranslateX(xTranslation);
     }
 
     @Override
     public void updateYSpaceshipCoordinate(double yTranslation) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+         this.spaceship.setTranslateY(yTranslation);
     }
 
     @Override
     public double getSpaceshipXPosition() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        return (this.spaceship.getTranslateX()+this.spaceship.getCenterX());
     }
 
     @Override
     public double getSpaceshipYPosition() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        return (this.spaceship.getTranslateY()+this.spaceship.getCenterY());
     }
 
     @Override
-    public double getSpaceShipXStartPosition() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public double getSpaceshipXStartPosition() {
+        
+        return this.spaceship.getCenterX();
     }
 
     @Override
-    public double getSpaceShipYStartPosition() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    //Methods Used in order to set/get the position of the bullet
-
-    @Override
-    public void updateBulletCenter(double x, double y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void updateXBulletCoordinate(double xTranslation) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void updateYBulletCoordinate(double yTranslation) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public double getBulletXPosition() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public double getBulletYPosition() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public double getBulletXStartPosition() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public double getBulletYStartPosition() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public double getSpaceshipYStartPosition() {
+        
+       return this.spaceship.getCenterY();
     }
     
     //Methods used in order to Manage the life of spaceship
     
     @Override
     public boolean isSpaceshipOutOfScenaryLimits() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        double startXPosition = this.getSpaceshipXStartPosition();
+        double startYPosition = this.getSpaceshipYStartPosition();
+        
+        double xUniverseBound = 1200.0-this.spaceship.getRadius();
+        double yUniverseBound = 800.0-this.spaceship.getRadius();
+       
+        
+        boolean maxLimitReach = startXPosition+this.spaceship.getTranslateX()>xUniverseBound || startYPosition+this.spaceship.getTranslateY()>yUniverseBound;
+        
+        return maxLimitReach;
+        
+        /*boolean spaceshipOutOfScenaryLimits = true;
+        
+        if(this.spaceship.getCenterX()+ this.spaceship.getRadius()<1200.0 || this.spaceship.getCenterY()+ this.spaceship.getRadius()<800.0) {
+            
+            spaceshipOutOfScenaryLimits = false;
+            
+            return spaceshipOutOfScenaryLimits;
+        }
+        
+        return spaceshipOutOfScenaryLimits;*/
+        
     }
 
     @Override
@@ -121,17 +114,14 @@ public class Model implements IModel {
     
     @Override
     public GameData getGameData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setupResults() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        return gameData;
     }
 
     @Override
     public int getLevel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         
+        return this.level;
     }
     
     //Methods used in order to get/set the data about the match.

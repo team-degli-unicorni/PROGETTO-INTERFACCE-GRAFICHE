@@ -20,22 +20,22 @@ public class PlayerData {
         this.playerLst = new LinkedList<Player>();
     }
 
-    public void add(Player player){
+    public void add(Player player) {
         
         this.playerLst.add(player);
     }
     
-    public void remove(Player player){
+    public void remove(Player player) {
         
         this.playerLst.remove(player);
     }
 
-    public LinkedList<Player> getListOfPlayers(){
+    public LinkedList<Player> getListOfPlayers() { 
         
         return this.playerLst;
     }
 
-    public LinkedList<String[]> asListOfStringArray(){
+    public LinkedList<String[]> asListOfStringArray() {
         
         LinkedList<String[]> lstSA = null;
 

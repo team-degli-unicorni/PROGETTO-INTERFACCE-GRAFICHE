@@ -18,7 +18,7 @@ public class Player {
     private int levelNumber;
     private double launchPower;
 
-    public Player(int playerId, String playerName, int playerBouncesNumber, int desiredBounces, int levelNumber, double launchPower){
+    public Player(int playerId, String playerName, int playerBouncesNumber, int desiredBounces, int levelNumber, double launchPower) {
         
         this.playerId = playerId;
         this.playerName = playerName;
@@ -28,48 +28,49 @@ public class Player {
         this.launchPower = launchPower;
     }
     
-    public int getPlayerId(){
+    public int getPlayerId() {
         
         return this.playerId;
-    }
     
-    public String getPlayerName(){
+    }//end method getPlayerId
+    
+    public String getPlayerName() {
        
         return this.playerName;
         
     }//end method getPlayerName 
     
-    public int getPlayerBouncesNumber(){
+    public int getPlayerBouncesNumber() {
         
         return this.playerBouncesNumber;
     
     }//end method getPlayerBouncesNumber
     
-    public void setDesiredBounces(int desiredBounces){
+    public void setDesiredBounces(int desiredBounces) {
         
         this.desiredBounces = desiredBounces;
     
     }//end method setDesiredBounces
     
-    public int getDesiredBounces(){
+    public int getDesiredBounces() {
         
         return this.desiredBounces;
     
     }//end method getDesiredBounces
     
-    public void setLevelNumber(int levelNumber){
+    public void setLevelNumber(int levelNumber) {
         
         this.levelNumber = levelNumber;
     
     }//end method setLevelNumber
     
-    public int getLevelNumber(){
+    public int getLevelNumber() {
         
         return this.levelNumber;
     
     }//end method getLevelNumber
 
-    public double getLaunchPower(){
+    public double getLaunchPower() {
         
         return launchPower;
     

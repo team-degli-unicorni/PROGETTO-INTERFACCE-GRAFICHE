@@ -23,22 +23,12 @@ public interface IModel {
     public double getSpaceShipXStartPosition();
     public double getSpaceShipYStartPosition();
     
-    //Methods Used in order to set/get the position of the bullet
-    public void updateBulletCenter(double x,double y);
-    public void updateXBulletCoordinate(double xTranslation);
-    public void updateYBulletCoordinate(double yTranslation);
-    public double getBulletXPosition();
-    public double getBulletYPosition();
-    public double getBulletXStartPosition();
-    public double getBulletYStartPosition();
-    
     //Methods used in order to Manage the life of spaceship
     public boolean isSpaceshipOutOfScenaryLimits();
     public boolean isHurtingAPlanet();
     
     //Methods used in order to control the match
     public GameData getGameData();
-    public void setupResults();
     public int getLevel();
     
     //Methods used in order to get/set the data about the match.
@@ -51,15 +41,6 @@ public interface IModel {
     public void setCurrentPlayer(Player p);
     public void setPlayerData() throws IOException, FileNotFoundException;
     public PlayerData getPlayerData();
-    public void deleteProfile(int idProfile);
-
-    
-  
-    
-           
-    
-    
-    
-    
+    public void deleteProfile(int idProfile);  
 }
 
