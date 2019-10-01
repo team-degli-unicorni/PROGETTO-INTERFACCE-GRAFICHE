@@ -20,8 +20,8 @@ public interface IModel {
     public void updateYSpaceshipCoordinate(double yTranslation);
     public double getSpaceshipXPosition();
     public double getSpaceshipYPosition();
-    public double getSpaceShipXStartPosition();
-    public double getSpaceShipYStartPosition();
+    public double getSpaceshipXStartPosition();
+    public double getSpaceshipYStartPosition();
     
     //Methods used in order to Manage the life of spaceship
     public boolean isSpaceshipOutOfScenaryLimits();
@@ -36,8 +36,6 @@ public interface IModel {
     public boolean isGameLost();
     public int getPlayerRebounces();
     public String getPlayerName();
-    public int getPlayerLevel();
-    public int getPlayerBestLevel();
     public void setCurrentPlayer(Player p);
     public void setPlayerData() throws IOException, FileNotFoundException;
     public PlayerData getPlayerData();
