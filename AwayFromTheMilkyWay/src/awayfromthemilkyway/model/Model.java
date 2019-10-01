@@ -125,7 +125,7 @@ public class Model implements IModel {
     }
 
     @Override
-    public int getLevel() {
+    public int getPlayerLevel() {
          
         return this.level;
     }
