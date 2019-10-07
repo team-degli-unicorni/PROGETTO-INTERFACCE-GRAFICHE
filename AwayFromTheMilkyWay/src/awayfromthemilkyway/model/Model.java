@@ -5,8 +5,11 @@
  */
 package awayfromthemilkyway.model;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  *
@@ -21,11 +24,9 @@ public class Model implements IModel {
     //instance fields
    
     private int playerLevel;
-    private double playerBulletXStartPosition;
-    private double playerBulletYStartPosition;
     private int level;
-    private double bulletRadius;
     private SpaceshipModel spaceship;
+    private ObstacleEnemyModel enemyPlanet;
     private PlayerData playerData;
     private GameData gameData;
     private Player player;
@@ -129,7 +130,13 @@ public class Model implements IModel {
 
     @Override
     public boolean isHurtingAPlanet() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        boolean collision = false;
+        
+        if(this.spaceship.intersects(enemyPlanet.getBoundsInParent()))
+            collision = true;
+        
+        return collision;
     }
     
      //Methods used in order to control the match
@@ -141,7 +148,7 @@ public class Model implements IModel {
     }
 
     @Override
-    public int getLevel() {
+    public int getPlayerLevel() {
          
         return this.level;
     }
@@ -160,45 +167,73 @@ public class Model implements IModel {
 
     @Override
     public int getPlayerRebounces() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        return this.player.getPlayerBouncesNumber();
     }
 
     @Override
     public String getPlayerName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int getPlayerLevel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int getPlayerBestLevel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+       return this.player.getPlayerName();
     }
 
     @Override
     public void setCurrentPlayer(Player p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        this.player = p;
     }
 
     @Override
     public void setPlayerData() throws IOException, FileNotFoundException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        LinkedList<String[]> lstRows=null;
+
+            playerData = new PlayerData();
+            if(new File("gameprofiles/saved.csv").exists()) {
+                
+                lstRows = ReadCSV.getRows("gameprofiles/saved.csv", "UTF-8");
+            }
+            else {
+                
+                new File("gameprofiles").mkdir();
+                new File("gameprofiles/saved.csv").createNewFile();
+            }
+            
+            if(lstRows!=null)
+            for(String[] currentPlayer : lstRows) {
+                
+                playerData.add(new Player(Integer.parseInt(currentPlayer[0]),
+                        currentPlayer[1],Integer.parseInt(currentPlayer[2]),
+                        Integer.parseInt(currentPlayer[3]),
+                        Integer.parseInt(currentPlayer[4]),
+                        Integer.parseInt(currentPlayer[5])));
+            }   
     }
 
     @Override
     public PlayerData getPlayerData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        return this.playerData;
     }
 
     @Override
     public void deleteProfile(int idProfile) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        for(Player p: this.playerData.getListOfPlayers())
+            if(p.getPlayerId() == idProfile)
+                this.playerData.getListOfPlayers().remove(p);
+        try {
+            
+            WriteCSV.print("gameprofiles/saved.csv", "UTF-8", this.playerData.asListOfStringArray());
+        
+        } catch(IOException ioe) {
+            
+            ControllerForModel.getInstance().notifyException("Si Ã¨ verificato un errore: "+ioe);
+        }
     }
     
-    
+    //Other Methods
+ 
     private Model() 
     {
 

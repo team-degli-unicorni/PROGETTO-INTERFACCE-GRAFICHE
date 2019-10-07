@@ -13,8 +13,6 @@ import javafx.scene.shape.Circle;
  */
 public class MilkyWayModel extends Circle {
     
-     private boolean win;
-    
      public MilkyWayModel(double centerX, double centerY, double radius)  {
         
         super(centerX, centerY, radius);

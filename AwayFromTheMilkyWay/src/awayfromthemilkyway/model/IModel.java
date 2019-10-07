@@ -15,32 +15,30 @@ import java.io.IOException;
 public interface IModel {
     
     //Methods Used in order to set/get the position of the spaceship
-    public void updateSpaceshipCenter(double x,double y);
-    public void updateXSpaceshipCoordinate(double xTranslation);
-    public void updateYSpaceshipCoordinate(double yTranslation);
-    public double getSpaceshipXPosition();
-    public double getSpaceshipYPosition();
-    public double getSpaceshipXStartPosition();
-    public double getSpaceshipYStartPosition();
+    public void updateSpaceshipCenter(double x,double y); //ok
+    public void updateXSpaceshipCoordinate(double xTranslation); //ok
+    public void updateYSpaceshipCoordinate(double yTranslation); //ok
+    public double getSpaceshipXPosition(); //ok
+    public double getSpaceshipYPosition(); //ok
+    public double getSpaceshipXStartPosition(); //ok
+    public double getSpaceshipYStartPosition(); //ok
     public double getMilkyWayXPosition();
     public double getMilkyWayYPosition();
     public double getMilkyWayRadius();
     
     //Methods used in order to Manage the life of spaceship
-    public boolean isSpaceshipOutOfScenaryLimits();
-    public boolean isHurtingAPlanet();
+    public boolean isSpaceshipOutOfScenaryLimits(); //ok
+    public boolean isHurtingAPlanet(); //ok
     
     //Methods used in order to control the match
     public GameData getGameData();
-    public int getLevel();
+    public int getPlayerLevel(); //ok
     
     //Methods used in order to get/set the data about the match.
     public boolean isLevelWin();
     public boolean isGameLost();
-    public int getPlayerRebounces();
-    public String getPlayerName();
-    public int getPlayerLevel();
-    public int getPlayerBestLevel();
+    public int getPlayerRebounces(); //ok
+    public String getPlayerName(); //ok
     public void setCurrentPlayer(Player p);
     public void setPlayerData() throws IOException, FileNotFoundException;
     public PlayerData getPlayerData();

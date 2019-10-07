@@ -3,6 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/controller/AwayFromTheMilkyWay.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/MilkyWayModel.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/GameStats.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/ObstacleEnemyModel.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/GameData.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/SpaceshipModel.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/ObstacleCollisionModel.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/Player.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/IModel.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/Model.java</file>
+            <file>file:/C:/Users/Stefania/Desktop/AFTMW/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/PlayerData.java</file>
+=======
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/SpaceshipModel.java</file>
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/view/GameGui.java</file>
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/controller/AwayFromTheMilkyWay.java</file>
@@ -16,6 +29,7 @@
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/view/Universe.java</file>
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/Model.java</file>
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/MilkyWayModel.java</file>
+>>>>>>> 4ca5c4e5fa419f101787666a2953d5087bc335ce
         </group>
     </open-files>
 </project-private>

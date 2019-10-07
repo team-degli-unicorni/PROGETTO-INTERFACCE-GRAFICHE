@@ -36,9 +36,10 @@ public class SpaceshipModel extends Circle {
         
         return spaceshipLife; 
     
-    }//end method deadEnemyCollision
+    }//end method deadEnemyCollision ma riscritto anche sul model, valutare quale scegliere
     
      public boolean getCollision() {
+         
         return collision;
     
     }//end method getCollision
