@@ -12,11 +12,8 @@ import javafx.scene.shape.Circle;
  * @author Stefania
  */
 public class ObstacleEnemyModel extends Circle {
-    
-    private boolean collision;
-    private int spaceshipLife;
   
-    public ObstacleEnemyModel(double centerX, double centerY, double radius){
+    public ObstacleEnemyModel(double centerX, double centerY, double radius) {
         
         super(centerX, centerY, radius);
         
@@ -25,15 +22,4 @@ public class ObstacleEnemyModel extends Circle {
     //getCenterX
     
     //getCenterY
-    
-    public int deadEnemyCollision(){
-        
-        if(collision)
-             spaceshipLife = 0;
-        
-        return spaceshipLife; 
-    
-    }//end method deadEnemyCollision
-    
-    
 }

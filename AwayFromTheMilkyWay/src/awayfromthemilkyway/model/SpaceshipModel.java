@@ -13,13 +13,12 @@ import javafx.scene.shape.Circle;
  */
 public class SpaceshipModel extends Circle {
     
-    //scritta nuova1
-    
     private int spaceshipLife;
     private boolean collision;
+    private int nBounces = 0;
     private double speed;
     
-    public SpaceshipModel(double centerX, double centerY, double radius, int spaceshipLife){
+    public SpaceshipModel(double centerX, double centerY, double radius, int spaceshipLife) {
         
         super(centerX, centerY, radius);
         this.spaceshipLife = spaceshipLife;
@@ -30,17 +29,39 @@ public class SpaceshipModel extends Circle {
     
     //getCenterY
 
-    
-    public int deadCollision(){
+    public int deadEnemyCollision() {
         
-        if(!collision)
+        if(collision)
              spaceshipLife = 0;
         
         return spaceshipLife; 
     
-    }//end method deadCollision
+    }//end method deadEnemyCollision
     
-    public int deadSpeed(){
+     public boolean getCollision() {
+        return collision;
+    
+    }//end method getCollision
+     
+    public int counterCollision() {
+        
+        if(this.getCollision())
+            nBounces = nBounces + 1;
+        
+        return nBounces;
+        
+    }//end method counterCollision
+    
+    public int deadBounces(int desiredBounces) { 
+        
+        if(nBounces<desiredBounces)
+             spaceshipLife = 0;
+        
+        return spaceshipLife; 
+    
+    }//end method deadBounces
+    
+    public int deadSpeed() {
         
         if(speed==0.0)          
             spaceshipLife = 0;
@@ -49,12 +70,12 @@ public class SpaceshipModel extends Circle {
     
     }//end method deadSpeed
     
-    public int deadPosition(){
+    public int deadPosition() {
         
         if(this.getCenterX()+ this.getRadius()>1200.0 || this.getCenterY()+ this.getRadius()>800.0) 
             spaceshipLife = 0;
         
         return spaceshipLife;
     
-    }//end method deadPosition
+    }//end method deadPosition ma riscritto anche sul model, valutare quale scegliere
 }
