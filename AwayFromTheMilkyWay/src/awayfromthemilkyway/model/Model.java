@@ -7,7 +7,6 @@ package awayfromthemilkyway.model;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  *
@@ -30,6 +29,7 @@ public class Model implements IModel {
     private PlayerData playerData;
     private GameData gameData;
     private Player player;
+    private MilkyWayModel milkyWay;
     
     //Methods Used in order to set/get the position of the spaceship
 
@@ -75,6 +75,28 @@ public class Model implements IModel {
         
        return this.spaceship.getCenterY();
     }
+    
+    @Override
+    public double getMilkyWayXPosition(){
+        
+        return this.milkyWay.getCenterX();
+    
+    }//end method getMilkyWayXPosition()
+    
+    @Override
+    public double getMilkyWayYPosition(){
+        
+        return this.milkyWay.getCenterY();
+    
+    }//end method getMilkyWayYPosition()
+    
+    @Override
+    public double getMilkyWayRadius(){
+        
+        return this.milkyWay.getRadius();
+        
+    }//end method getMilkyWayRadius
+    
     
     //Methods used in order to Manage the life of spaceship
     
@@ -127,12 +149,12 @@ public class Model implements IModel {
     //Methods used in order to get/set the data about the match.
 
     @Override
-    public boolean isGameWin() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean isLevelWin() {//confronta la posizione del centro dell'astronave con quella del centro della milkyway
+       return(Model.getInstance().getSpaceshipXPosition() == Model.getInstance().getMilkyWayXPosition() & Model.getInstance().getSpaceshipYPosition() == Model.getInstance().getMilkyWayYPosition());
     }
 
     @Override
-    public boolean isGameLost() {
+    public boolean isGameLost() {//secondo me non serve perchè abbiamo solo bisogno di sapere se il livello è superato oppure no,e il metodo sopra lo verifica restituendo false se non è superato e true se lo è
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -176,4 +198,14 @@ public class Model implements IModel {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    
+    private Model() 
+    {
+
+    }//end constructor model
+    public static IModel getInstance() {
+	if (instance == null)
+            instance = new Model();
+	return instance;  
+    }//end method getInstance
 }
