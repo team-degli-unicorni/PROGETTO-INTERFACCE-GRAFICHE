@@ -22,6 +22,9 @@ public interface IModel {
     public double getSpaceshipYPosition(); //ok
     public double getSpaceshipXStartPosition(); //ok
     public double getSpaceshipYStartPosition(); //ok
+    public double getMilkyWayXPosition();
+    public double getMilkyWayYPosition();
+    public double getMilkyWayRadius();
     
     //Methods used in order to Manage the life of spaceship
     public boolean isSpaceshipOutOfScenaryLimits(); //ok
@@ -32,7 +35,7 @@ public interface IModel {
     public int getPlayerLevel(); //ok
     
     //Methods used in order to get/set the data about the match.
-    public boolean isGameWin();
+    public boolean isLevelWin();
     public boolean isGameLost();
     public int getPlayerRebounces(); //ok
     public String getPlayerName(); //ok
