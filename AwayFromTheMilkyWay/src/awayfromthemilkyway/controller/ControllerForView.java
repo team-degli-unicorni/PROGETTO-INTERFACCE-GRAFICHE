@@ -66,23 +66,32 @@ public class ControllerForView implements IControllerForView {
                     if(!Model.getInstance().isSpaceshipOutOfScenaryLimits){//se l'astronave non è fuori dai limiti si entrerà in questo if
                        
                         if(Model.getInstance().isHurtingAPlanet){//metodo del rimbalzo se  l'astronave urta un pianeta
-                            double newAngle = Math.atan2(moveYComponent * -1,moveXComponent) - Math.PI;// lonk per info su coord polari https://library.weschool.com/lezione/sistema-di-coordinate-polari-spirale-di-archimede-geometria-analitica-13404.html
+                            double newAngle = Math.atan2(moveYComponent * -1,moveXComponent) - Math.PI;// link per info su coord polari https://library.weschool.com/lezione/sistema-di-coordinate-polari-spirale-di-archimede-geometria-analitica-13404.html
                             //Resources.SoundEffects.BOUNCE.play();
                             
                             this.stopAnimation(false); 
                             ControllerForView.getInstance().shoot(newAngle,speed/2,
-                                    Model.getInstance().getBulletXPosition())
+                                    Model.getInstance().getBulletXPosition(),
+                                    Model.getInstance().getBulletYPosition())//non so perchè mq qui sottrae alla posizione di partenza una costante BOUNCING
                                     
                             
-                        }//end if
+                        }else {//se ad eempio l'astronave incagliaa contro un ostacolo  contro la via lattea
+                            this.stop();
+                        }
+                    
+                    } else {//se l'astronave esce dai bordi
+                        this.stop();
+                    }
+                
+                  
                     
                 
                 
             }//end method handle
-        }//end animation timer
+        }.start();//end animation timer
     }//end method shootSpaceship
     
-    public void moveSpaceShip(double moveX,double moveY){
+    public void moveSpaceShip(double moveX,double moveY){//non so a cosa serva questo metodo
         Model.getInstance().updateXSpaceshipCoordinate(moveX);
         Model.getInstance().updateYSpaceshipCoordinate(moveY);
         View.getInstance().updateSpaceshipPositionX(moveX);
