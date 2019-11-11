@@ -6,7 +6,12 @@
 package awayfromthemilkyway.controller;
 
 import awayfromthemilkyway.model.Model;
+import awayfromthemilkyway.utils.ReadCSV;
+import awayfromthemilkyway.utils.WriteCSV;
 import awayfromthemilkyway.view.View;
+import java.io.File;
+import java.io.IOException;
+import java.util.LinkedList;
 import javafx.animation.AnimationTimer;
 
 /**
@@ -27,12 +32,12 @@ public class ControllerForView implements IControllerForView {
     
     @Override
     public double getXStartPosition(){
-        return Model.getInstance().getSpaceShipXStartPosition();
+        return Model.getInstance().getSpaceshipXStartPosition();
     }//end method getXStartPosition
     
     @Override
     public double getYStartPosition(){
-        return Model.getInstance().getSpaceShipYStartPosition();
+        return Model.getInstance().getSpaceshipYStartPosition();
     }//end method getYStartPosition
     
     @Override
@@ -41,7 +46,7 @@ public class ControllerForView implements IControllerForView {
     }//end method getPlayerName
     
     @Override
-    public String getPlayerRebounces(){
+    public int getPlayerRebounces(){
         return Model.getInstance().getPlayerRebounces();    
     }//end method getPlayerRebounces
     
@@ -124,7 +129,128 @@ public class ControllerForView implements IControllerForView {
         View.getInstance().updateSpaceshipPositionY(moveY);
     }
     
+    @Override
+    public void createNewGameProfile(String name) throws IOException{
     
+        int playerId=-1;
+     
+        
+        if(new File("gameprofiles/saved.csv").exists())  
+        {
+            if (!ReadCSV.getRows("gameprofiles/saved.csv", "UTF-8").isEmpty())
+                playerId = Integer.parseInt(ReadCSV.getRows("gameprofiles/saved.csv", "UTF-8").getLast()[0]);
+        }
+        else
+        {
+            new File("gameprofiles").mkdir();
+            new File("gameprofiles/saved.csv").createNewFile();
+        }
+
+        String[] playerData = new String[6];
+        playerData[0]=String.valueOf(++playerId); //Setting up the ID of the player.
+        playerData[1]=name; //Setting up the name of the player.
+        playerData[2]=String.valueOf(0); //Setting up the number of desired bounces
+        playerData[3]=String.valueOf(Model.getInstance().getPlayerRebounces()); //number of bounces
+        playerData[4]=String.valueOf(Model.getInstance().getPlayerLevel()); //number of level
+        playerData[5]=String.valueOf(1); //Setting up the current scenery in the campaign.
+
+        WriteCSV.printRow("gameprofiles/saved.csv","UTF-8" , playerData);
+
+        Model.getInstance().setPlayerData();
+    }
+    @Override
+    public LinkedList<String[]> getListOfPlayers() throws IOException{
+        Model.getInstance().setPlayerData();
+        return Model.getInstance().getPlayerData().asListOfStringArray();
+    }
+    @Override 
+    public LinkedList<String[]> getLevelStats() throws IOException{
+        Model.getInstance().setupResults();
+        return Model.getInstance().getLevelData().asListOfStringArray();
+    }
+    @Override 
+    public String[] getLevelData(int level){
+        return Model.getInstance().getLevelData().searchForLevelId(level).dataAsStringArray();
+    }
+    
+    @Override
+    public void loadGameProfile(int idProfile) throws IOException{
+        Model.getInstance().setPlayerData();
+        Model.getInstance().getPlayerData().getListOfPlayers().stream().filter((p) -> (p.getPlayerId()==idProfile)).forEachOrdered((p) -> {
+            Model.getInstance().setCurrentPlayer(p);
+        });
+    }
+    @Override
+    public void loadLevel(int level,boolean modality)
+    {
+        this.disablePlayerTwoControl = true;
+        this.disablePlayerControl = false;
+        
+        String path = "/resources/config/level"+level+".txt";
+
+        switch(level)
+        {
+            case Constants.MISSION_ONE_ID:
+                Config.getInstance().changeConfigurationFile(path);
+                Model.getInstance().init(level, 
+                        modality,
+                        new Level1Model(Config.getInstance().getPlayerBaseStartX(),Config.getInstance().getPlayerBaseStartY()),
+                        new Level1Model(Config.getInstance().getEnemyBaseStartX(),Config.getInstance().getEnemyBaseStartY()));
+                View.getInstance().prepareGameScreen(
+                        new Level1(Config.getInstance().getPlayerBaseStartX(),Config.getInstance().getPlayerBaseStartY()), 
+                        new Level1(Config.getInstance().getEnemyBaseStartX(),Config.getInstance().getEnemyBaseStartY()));
+                break;
+            case Constants.MISSION_TWO_ID:
+                Config.getInstance().changeConfigurationFile(path);
+                Model.getInstance().init(level, 
+                        modality,
+                        new Level2AlliedModel(Config.getInstance().getPlayerBaseStartX(),Config.getInstance().getPlayerBaseStartY()),
+                        new Level2EnemyModel(Config.getInstance().getEnemyBaseStartX(),Config.getInstance().getEnemyBaseStartY()));
+                View.getInstance().prepareGameScreen(
+                        new Level2Allied(Config.getInstance().getPlayerBaseStartX(),Config.getInstance().getPlayerBaseStartY()), 
+                        new Level2Enemy(Config.getInstance().getEnemyBaseStartX(),Config.getInstance().getEnemyBaseStartY()));
+                break;
+            case Constants.MISSION_THREE_ID:
+                Config.getInstance().changeConfigurationFile(path);
+                Model.getInstance().init(level, 
+                        modality,
+                        new Level3AlliedModel(Config.getInstance().getPlayerBaseStartX(),Config.getInstance().getPlayerBaseStartY()),
+                        new Level3EnemyModel(Config.getInstance().getEnemyBaseStartX(),Config.getInstance().getEnemyBaseStartY()));
+                View.getInstance().prepareGameScreen(
+                        new Level3Allied(Config.getInstance().getPlayerBaseStartX(),Config.getInstance().getPlayerBaseStartY()), 
+                        new Level3Enemy(Config.getInstance().getEnemyBaseStartX(),Config.getInstance().getEnemyBaseStartY()));
+                break;
+            case Constants.MISSION_FOUR_ID:
+                Config.getInstance().changeConfigurationFile(path);
+                Model.getInstance().init(level, 
+                        modality,
+                        new Level4Model(Config.getInstance().getPlayerBaseStartX(),Config.getInstance().getPlayerBaseStartY()),
+                        new Level4Model(Config.getInstance().getEnemyBaseStartX(),Config.getInstance().getEnemyBaseStartY()));
+                View.getInstance().prepareGameScreen(
+                        new Level4(Config.getInstance().getPlayerBaseStartX(),Config.getInstance().getPlayerBaseStartY()), 
+                        new Level4(Config.getInstance().getEnemyBaseStartX(),Config.getInstance().getEnemyBaseStartY()));
+                break;
+            case Constants.MISSION_FIVE_ID:
+                Config.getInstance().changeConfigurationFile(path);
+                Model.getInstance().init(level, 
+                        modality,
+                        new Level5Model(Config.getInstance().getPlayerBaseStartX(),Config.getInstance().getPlayerBaseStartY()),
+                        new Level5Model(Config.getInstance().getEnemyBaseStartX(),Config.getInstance().getEnemyBaseStartY()));
+                View.getInstance().prepareGameScreen(
+                        new Level5(Config.getInstance().getPlayerBaseStartX(),Config.getInstance().getPlayerBaseStartY()), 
+                        new Level5(Config.getInstance().getEnemyBaseStartX(),Config.getInstance().getEnemyBaseStartY()));
+                break;
+            default:
+                View.getInstance().showInformationDialog("Complimenti, hai completato tutte le missioni. "
+                        + "Ora puoi rigiocare un qualunque scenario senza perdere vite",
+                        "Campagna Completata");
+                break;
+        }
+    }
+    @Override
+    public void deleteProfile(int idProfile){
+        Model.getInstance().deleteProfile(idProfile);
+    }
     
     //methods to set up the instance
     

@@ -40,8 +40,8 @@ public interface IModel {
     public int getPlayerRebounces(); //ok
     public String getPlayerName(); //ok
     public void setCurrentPlayer(Player p);
-    public void setPlayerData() throws IOException, FileNotFoundException;
+    //public void setPlayerData() throws IOException, FileNotFoundException;
     public PlayerData getPlayerData();
-    public void deleteProfile(int idProfile);  
+    //public void deleteProfile(int idProfile);  
 }
 

@@ -183,7 +183,7 @@ public class Model implements IModel {
         this.player = p;
     }
 
-    @Override
+   
     public void setPlayerData() throws IOException, FileNotFoundException {
         
         LinkedList<String[]> lstRows=null;
@@ -216,7 +216,7 @@ public class Model implements IModel {
         return this.playerData;
     }
 
-    @Override
+    /*@Override
     public void deleteProfile(int idProfile) {
         
         for(Player p: this.playerData.getListOfPlayers())
@@ -231,7 +231,7 @@ public class Model implements IModel {
             ControllerForModel.getInstance().notifyException("Si Ã¨ verificato un errore: "+ioe);
         }
     }
-    
+    */
     //Other Methods
  
     private Model() 

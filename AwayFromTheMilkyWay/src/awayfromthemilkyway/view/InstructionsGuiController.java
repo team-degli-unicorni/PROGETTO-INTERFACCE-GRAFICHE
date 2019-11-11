@@ -5,6 +5,7 @@
  */
 package awayfromthemilkyway.view;
 
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -24,8 +25,10 @@ public class InstructionsGuiController implements Initializable {
         // TODO
     }  
     
+    
+   
     public void backToOptionsButtonClicked(){
-        View.getInstance().openOptionsWindow();
-    }
+        View.getInstance().openMenuWindow();
+    }//end method backToOptionsBut
     
 }

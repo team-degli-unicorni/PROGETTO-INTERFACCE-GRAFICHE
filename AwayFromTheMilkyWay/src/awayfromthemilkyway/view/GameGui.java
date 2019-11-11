@@ -35,7 +35,7 @@ public class GameGui extends Stage {
         layout.setTop(null);
         
         
-        Scene gameScene = new Scene(layout,1280,720);
+        Scene gameScene = new Scene(layout,1280,800);
         
         
         

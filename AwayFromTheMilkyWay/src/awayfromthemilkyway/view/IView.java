@@ -18,7 +18,10 @@ public interface IView {
     public void showInformationDialog(String message, String title);
     public boolean showConfirmationDialog(String message,String title, String firstOption, String secondOption);
     public void showErrorDialog(String message);
+   
     
+    public void openNewProfileWindow();
+    public void openLoadProfileWindow();
     
     //Methods in order to move things in the screen
     public void updateSpaceshipPositionX(double translation);
