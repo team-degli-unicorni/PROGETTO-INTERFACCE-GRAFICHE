@@ -27,7 +27,7 @@ public interface IControllerForView {
     public void loadGameProfile(int idProfile) throws IOException;
     public void loadLevel(int level,boolean modality);
     public void deleteProfile(int idProfile);
-    
+    public String[] getLevelData(int level);
     
     
     

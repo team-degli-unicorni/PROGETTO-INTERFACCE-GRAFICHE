@@ -101,16 +101,16 @@ public class View implements IView{
     public void openNewProfileWindow() {
         this.prepareSceneToShowWindow("NewProfileWindow.fxml",
                 "Creazione di un nuovo profilo di gioco", 
-                NEW_PROFILE_WINDOW_WIDTH, 
-                NEW_PROFILE_WINDOW_HEIGHT);
+                1080, 
+                720);
     }
 
     @Override
     public void openLoadProfileWindow() {
         prepareSceneToShowWindow("LoadProfileWindow.fxml",
                 "Selezione del profilo di gioco",
-                LOAD_PROFILE_WINDOW_WIDTH,
-                LOAD_PROFILE_WINDOW_HEIGHT);
+                1080,
+                720);
     }
      
      

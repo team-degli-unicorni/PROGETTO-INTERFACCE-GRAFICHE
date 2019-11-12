@@ -16,7 +16,7 @@ public class GameData {
 
     public GameData() {
         
-        this.gameListData = new LinkedList<GameStats>();
+        this.gameListData = new LinkedList<GameStats>();//creazione di una linked list con elementi del tipo GameStats"
     }
 
     public void add(GameStats game) {
@@ -24,7 +24,7 @@ public class GameData {
         this.gameListData.add(game);
     }
     
-    public GameStats searchForGameId(int game) {
+    public GameStats searchForGameId(int game) {//cerca la lista dei data di un livello in base al gameId(ossia l'id di livello)
         
         GameStats found = null;
         
@@ -37,7 +37,7 @@ public class GameData {
         return found;
     }
     
-    public void checkForUpdate(Player player, int game,int level) {
+    public void checkForUpdate(Player player, int game,int level) {//penso che serva a vedere nel corso del gioco se il best score aumenta
         
         int gameIndex = level - 1;
         GameStats currentGame = searchForGameId(game);

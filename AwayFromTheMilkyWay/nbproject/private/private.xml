@@ -5,14 +5,17 @@
         <group>
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/view/GameGui.java</file>
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/controller/AwayFromTheMilkyWay.java</file>
+            <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/IModel.java</file>
+            <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/utils/Constants.java</file>
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/view/NewPlayer.fxml</file>
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/controller/IControllerForView.java</file>
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/controller/ControllerForView.java</file>
+            <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/GameData.java</file>
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/view/View.java</file>
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/view/LevelDataPane.java</file>
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/view/IView.java</file>
-            <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/view/Universe.java</file>
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/utils/WriteCSV.java</file>
+            <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/view/Universe.java</file>
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/model/Model.java</file>
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/view/NewPlayerController.java</file>
             <file>file:/C:/Users/giorg/OneDrive/Desktop/GIT%20PROGETTO/PROGETTO-INTERFACCE-GRAFICHE/AwayFromTheMilkyWay/src/awayfromthemilkyway/utils/ReadCSV.java</file>

@@ -6,6 +6,9 @@
 package awayfromthemilkyway.controller;
 
 import awayfromthemilkyway.model.Model;
+import awayfromthemilkyway.model.PlayerData;
+import awayfromthemilkyway.utils.Configuration;
+import awayfromthemilkyway.utils.Constants;
 import awayfromthemilkyway.utils.ReadCSV;
 import awayfromthemilkyway.utils.WriteCSV;
 import awayfromthemilkyway.view.View;
@@ -137,8 +140,8 @@ public class ControllerForView implements IControllerForView {
         
         if(new File("gameprofiles/saved.csv").exists())  
         {
-            if (!ReadCSV.getRows("gameprofiles/saved.csv", "UTF-8").isEmpty())
-                playerId = Integer.parseInt(ReadCSV.getRows("gameprofiles/saved.csv", "UTF-8").getLast()[0]);
+            if (!ReadCSV.getRows("gameprofiles/saved.csv", "UTF-8").isEmpty())//starebbe a dire che se il CSV è vuoto non si entra nemmeno nell'if
+                playerId = Integer.parseInt(ReadCSV.getRows("gameprofiles/saved.csv", "UTF-8").getLast()[0]);//assegna a playerId l'ultimo elemnto della lista
         }
         else
         {
@@ -146,7 +149,7 @@ public class ControllerForView implements IControllerForView {
             new File("gameprofiles/saved.csv").createNewFile();
         }
 
-        String[] playerData = new String[6];
+        String[] playerData = new String[6];//inserisco in un array di stringhe i dati del nuovo giocatore
         playerData[0]=String.valueOf(++playerId); //Setting up the ID of the player.
         playerData[1]=name; //Setting up the name of the player.
         playerData[2]=String.valueOf(0); //Setting up the number of desired bounces
@@ -154,27 +157,27 @@ public class ControllerForView implements IControllerForView {
         playerData[4]=String.valueOf(Model.getInstance().getPlayerLevel()); //number of level
         playerData[5]=String.valueOf(1); //Setting up the current scenery in the campaign.
 
-        WriteCSV.printRow("gameprofiles/saved.csv","UTF-8" , playerData);
+        WriteCSV.printRow("gameprofiles/saved.csv","UTF-8" , playerData);//scrivo i dati del nuovo giocatore nel file CSV
 
-        Model.getInstance().setPlayerData();
+        Model.getInstance().setPlayerData();//aggiornao il nuovo giocatore nella lista "Players"
     }
     @Override
     public LinkedList<String[]> getListOfPlayers() throws IOException{
         Model.getInstance().setPlayerData();
         return Model.getInstance().getPlayerData().asListOfStringArray();
     }
-    @Override 
+    /*@Override 
     public LinkedList<String[]> getLevelStats() throws IOException{
         Model.getInstance().setupResults();
         return Model.getInstance().getLevelData().asListOfStringArray();
-    }
+    }*/
     @Override 
-    public String[] getLevelData(int level){
-        return Model.getInstance().getLevelData().searchForLevelId(level).dataAsStringArray();
+    public String[] getLevelData(int level){//questo metodo ritorna i dati di un determinato livello a partire dal numero del livello
+        return Model.getInstance().getGameData().searchForGameId(level).dataAsStringArray();
     }
     
     @Override
-    public void loadGameProfile(int idProfile) throws IOException{
+    public void loadGameProfile(int idProfile) throws IOException{//carica un profilo di gioco di un giocatore con id pari a idProfile
         Model.getInstance().setPlayerData();
         Model.getInstance().getPlayerData().getListOfPlayers().stream().filter((p) -> (p.getPlayerId()==idProfile)).forEachOrdered((p) -> {
             Model.getInstance().setCurrentPlayer(p);
@@ -183,16 +186,13 @@ public class ControllerForView implements IControllerForView {
     @Override
     public void loadLevel(int level,boolean modality)
     {
-        this.disablePlayerTwoControl = true;
-        this.disablePlayerControl = false;
         
-        String path = "/resources/config/level"+level+".txt";
+        String path = "/resources/config/level"+level+".txt";//stringa che esprime il path del livello che si vuole loaddare
 
-        switch(level)
-        {
+        switch(level){//lo switch case funziona in questo modo: se l'argomento dello switch, in questo caso level è uguale a quello riportato dopo case, ad ex model.gegtInstance.MISSION_ONE_ID allora si entra in quel case      
             case Constants.MISSION_ONE_ID:
-                Config.getInstance().changeConfigurationFile(path);
-                Model.getInstance().init(level, 
+                Configuration.getInstance().changeConfigurationFile(path);
+                Model.getInstance().init(level, //init è un metodo che da quanto ho capito setuppa il livello
                         modality,
                         new Level1Model(Config.getInstance().getPlayerBaseStartX(),Config.getInstance().getPlayerBaseStartY()),
                         new Level1Model(Config.getInstance().getEnemyBaseStartX(),Config.getInstance().getEnemyBaseStartY()));
@@ -210,7 +210,7 @@ public class ControllerForView implements IControllerForView {
                         new Level2Allied(Config.getInstance().getPlayerBaseStartX(),Config.getInstance().getPlayerBaseStartY()), 
                         new Level2Enemy(Config.getInstance().getEnemyBaseStartX(),Config.getInstance().getEnemyBaseStartY()));
                 break;
-            case Constants.MISSION_THREE_ID:
+            case Constants.MISSION_THREE_ID:  //init è un metodo che da quanto ho capito setuppa il livello
                 Config.getInstance().changeConfigurationFile(path);
                 Model.getInstance().init(level, 
                         modality,
@@ -266,4 +266,6 @@ public class ControllerForView implements IControllerForView {
             instance = new ControllerForView();
 	return instance;
     }
+
+  
 }//end class ControllerForView

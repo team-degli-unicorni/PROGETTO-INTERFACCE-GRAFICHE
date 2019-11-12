@@ -19,7 +19,7 @@ import java.util.LinkedList;
  * @author giorg
  */
 public class WriteCSV {
-     public static void print(String fileName, String charset, LinkedList<String[]> lstSA) throws IOException 
+     public static void print(String fileName, String charset, LinkedList<String[]> lstSA) throws IOException //copia tutta la linked list
     {
         PrintWriter printWriter = new PrintWriter(
             new BufferedWriter(
@@ -36,7 +36,7 @@ public class WriteCSV {
         printWriter.close();
     }
     
-    public static void printRow(String fileName, String charset, String[] newRow) throws IOException 
+    public static void printRow(String fileName, String charset, String[] newRow) throws IOException //copia tutta una riga
     {
         FileWriter fileWriter = new FileWriter(new File(fileName), true);
         
